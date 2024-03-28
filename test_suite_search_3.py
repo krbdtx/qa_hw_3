@@ -7,21 +7,21 @@ search_txt_in_brow = 'User-oriented Web UI browser tests in Python. Contribute t
 search_txt_in_error = 'По введённому запросу ничего не найдено'
 
 def test_01(setting_browser):
-    ''''
-        Проверка поиска строки Гуглом
-        Успешно найдено
-    '''
+    """""
+    Проверка поиска строки Гуглом
+    Успешно найдено
+    """""
     
     browser.open('https://google.com')
     browser.element('[name="q"]').should(be.blank).type(search_txt).press_enter()
     browser.element('[id="search"]').should(have.text(search_txt_in_brow))
 
 
-def test_02():
-    ''''
-        Проверка поиска строки Рамблером
-        Успешно не найдено
-    '''
+def test_02(setting_browser):
+    """""
+    Проверка поиска строки Рамблером
+    Успешно не найдено
+    """""
 
     browser.open('https://rambler.ru')
     browser.element('[placeholder="Поиск по интернету"]').should(be.blank).type(search_txt_error).press_enter()
@@ -29,10 +29,10 @@ def test_02():
 
 
 def test_03(setting_browser):
-    ''''
-        Проверка поиска строки Яндексом
-        Успешно найдено
-    '''
+    """""
+    Проверка поиска строки Яндексом
+    Успешно найдено
+    """""
 
     browser.open('https://ya.ru')
     browser.element('[aria-label="Запрос"]').should(be.blank).type(search_txt).press_enter()
